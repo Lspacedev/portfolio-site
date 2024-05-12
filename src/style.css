@@ -5,15 +5,24 @@
 body {
     margin: 0;
     padding: 0;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    
 }
 
 /* header */
 
 header {
-    padding: 50px;
+    padding: 32px 64px;
+   
     display: flex;
     justify-content: space-between;
+    
 }
+
 
 .logo {
     display: flex;
@@ -22,9 +31,19 @@ header {
     font-size: 1.5rem;
 }
 
-nav ul {
+nav {
     display: flex;
-    gap: 45px;
+    justify-content: center;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+
+
 }
 
 nav ul li {
@@ -34,7 +53,7 @@ nav ul li {
 /* content */
 
 .content section {
-    margin-top: 15px;
+    margin-top: 75px;
 }
 
 /* about */
@@ -42,19 +61,39 @@ nav ul li {
 .about {
     display: flex;
     justify-content: center;
-    padding: 0px 100px;
+    
+ 
+    
 }
 
-.my-photo {
-    padding: 150px;
-    background-color: slategrey;
+.about-title {
+    font-size: 2.2rem;
+
+}
+
+.stack-icons i {
+    font-size: 4.2rem;
+}
+
+.my-photo img {
+    height: 370px;
+    width: 300px;
+    box-shadow: 2px 2px 8px rgb(170, 170, 170);
 }
 
 .about-info {
+    
     max-width: 500px;
+    padding: 35px 10px 35px 10px;
+    text-align: center;
+
+    align-self: center;
+
+    box-shadow: 2px 2px 8px rgb(170, 170, 170);
 }
 
 /* projects */
+
 
 .project-title {
     font-size: 2rem;
@@ -64,14 +103,18 @@ nav ul li {
 
 .project-cards {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
+
+    gap: 5%;
+    padding: 15px;
+
+    
 }
 
 .card {
-    margin: 25px;
-    max-width: 270px;
-
+    margin: 15px;
+    flex: 0 0 25%;
     box-shadow: 0 3px 10px rgb(204, 203, 203);
     
 }
@@ -108,8 +151,11 @@ nav ul li {
 /* footer */
 
 footer {
+ 
     display: flex;
     justify-content: space-around;
+
+    margin-top: 70px;
 }
 
 .footer-contact-info {
@@ -141,8 +187,103 @@ footer {
 
 .footer-img {
     display: flex;
+    
 }
 
 .footer-img .logo {
     font-size: 7rem;
+}
+
+
+/** media queries **/
+
+/* tablet */
+@media screen and (max-width: 1000px) {
+ 
+ 
+    .card {
+        flex: 0 0 40%;
+    }
+}
+
+/* mobile */
+
+@media all and (max-width: 636px) {
+
+
+    .about {
+        flex-direction: column;
+       
+    }
+
+    .my-photo {
+       display: flex;
+       justify-content: center;
+    }
+
+    .my-photo img {
+        height: 270px;
+        width: 250px;
+ 
+    }
+  
+
+    .about-info {
+        box-shadow: none;
+    }
+
+    .project-title {
+        text-align: center;
+        margin: 0;
+    }
+
+    .project-cards{
+        flex-direction: column;
+        align-content: center;
+        gap: 10px;
+    }
+
+    .card {
+        flex: 0;
+        margin: 0;
+        max-width: 350px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    .footer-img {
+        justify-content: center;
+    }
+
+    .footer-img .logo {
+        font-size: 5rem;
+    }
+}
+ 
+@media all and (max-width: 475px) {
+    header {
+       flex-direction: column;
+       align-content: center;
+       gap: 30px;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul {
+        gap: 10px;
+
+    }
+
 }
